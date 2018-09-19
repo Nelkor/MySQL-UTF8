@@ -2,11 +2,11 @@
 
 apt-get install mysql-server
 
-После установки создадим файл:
+### После установки создадим файл:
 
 vim /etc/mysql/conf.d/utf8_set.cnf
 
-Добавим в файл:
+### Добавим в файл:
 
 [mysqld]
 init_connect='SET collation_connection = utf8mb4_unicode_ci'
@@ -16,6 +16,6 @@ collation-server = utf8mb4_unicode_ci
 [client]
 default-character-set = utf8mb4
 
-Перезапустим сервис mysql:
+### Перезапустим сервис mysql:
 
 service mysql restart
