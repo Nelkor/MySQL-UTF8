@@ -9,12 +9,12 @@ vim /etc/mysql/conf.d/utf8_set.cnf
 ### Добавим в файл:
 
 [mysqld]  
-init_connect='SET collation_connection = utf8mb4_unicode_ci'
-character-set-server = utf8mb4
-collation-server = utf8mb4_unicode_ci
+init_connect='SET collation_connection = utf8mb4_unicode_ci'  
+character-set-server = utf8mb4  
+collation-server = utf8mb4_unicode_ci  
 
 [client]  
-default-character-set = utf8mb4
+default-character-set = utf8mb4  
 
 ### Перезапустим сервис mysql:
 
