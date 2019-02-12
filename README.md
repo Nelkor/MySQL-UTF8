@@ -19,3 +19,8 @@ default-character-set = utf8mb4
 ### Перезапустим сервис mysql:
 
 service mysql restart
+
+### Создать пользователя + настройка прав
+
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';  
+GRANT ALL PRIVILEGES ON database.* TO 'newuser'@'localhost';  
