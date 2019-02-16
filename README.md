@@ -24,3 +24,9 @@ service mysql restart
 
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';  
 GRANT ALL PRIVILEGES ON database.* TO 'newuser'@'localhost';  
+
+### Очистить таблицу, привязанную к другой таблице
+
+SET FOREIGN_KEY_CHECKS = 0;  
+TRUNCATE table $table_name;  
+SET FOREIGN_KEY_CHECKS = 1;  
