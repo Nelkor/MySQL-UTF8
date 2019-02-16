@@ -34,7 +34,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 ### Оптимизируем OFFSET LIMIT
 
 /* не оптимизированно */  
-select u.first_name, c.name FROM users as u LEFT JOIN cities as c ON u.cityId=c.id LIMIT 999000, 10;  
+select u.first_name, c.name FROM users as u LEFT JOIN cities as c ON u.cityId = c.id LIMIT 999000, 10;  
 
 /* оптимизированно */  
-select u.first_name, c.name FROM users as u LEFT JOIN cities as c ON u.cityId=c.id JOIN (SELECT id FROM users ORDER BY id LIMIT 999000, 10) as t ON t.id = u.id;  
+select u.first_name, c.name FROM users as u LEFT JOIN cities as c ON u.cityId = c.id JOIN (SELECT id FROM users ORDER BY id LIMIT 999000, 10) as t ON t.id = u.id;  
